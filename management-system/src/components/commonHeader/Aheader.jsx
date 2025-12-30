@@ -1,31 +1,29 @@
-import React from "react"
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-
-} from '@ant-design/icons';
-import { Button, Layout,theme } from 'antd';
+import React from "react";
+import { Avatar, Button, Layout, theme } from "antd";
+import "../commonHeader/aheader.css";
+import { MenuFoldOutlined } from "@ant-design/icons";
+import icon from "../../assets/icon.png";
 
 const { Header } = Layout;
 
 function Aheader() {
-    const {
-        token: { colorBgContainer, borderRadiusLG },
-    } = theme.useToken();
-    return (
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-            <Button
-                type="text"
-                // icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                // onClick={() => setCollapsed(!collapsed)}
-                style={{
-                    fontSize: '16px',
-                    width: 64,
-                    height: 64,
-                }}
-            />
-        </Header>
-    );
+  return (
+    <Header className="header-container">
+      <Button
+        type="text"
+        icon={<MenuFoldOutlined />}
+        // icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        // onClick={() => setCollapsed(!collapsed)}
+        style={{
+          fontSize: "16px",
+          width: 64,
+          height: 32,
+          backgroundColor: "#fff",
+        }}
+      />
+      <Avatar size={36} src={icon} />
+    </Header>
+  );
 }
 
-export default Aheader
+export default Aheader;
